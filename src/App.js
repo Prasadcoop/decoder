@@ -7,6 +7,7 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Skills from './Components/Skill';
 import Work from './Components/Work';
+import Emailjs from './Components/Emailjs';
 import Repositories from './Components/Repositories';
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
       <Home/>
       <About/>
       <Skills/>
-      <Work/>
-      <Contact/>
+      {/* <Work/> */}
       <Repositories/>
+      {/* <Contact/> */}
+      <Emailjs/>
     </div>
   );
 }
