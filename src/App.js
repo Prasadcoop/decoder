@@ -13,7 +13,7 @@ import Repositories from './Components/Repositories';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/> */}
       <Home/>
       <About/>
       <Skills/>
