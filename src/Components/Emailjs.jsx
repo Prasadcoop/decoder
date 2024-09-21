@@ -29,36 +29,40 @@ const EmailForm = () => {
   };
 
   return (
-    <div name='contact' className='w-full h-screen bg-[#0a192f] text-gray-300'>
+    <div name='contact' className='w-full h-screen '>
       <form onSubmit={handleSubmit} className='flex flex-col justify-center  items-center w-full h-full'>
-        <div className='pb-8'>
-          <p className='text-4xl font-bold inline border-b-4 border-pink-600 text-gray-300'>Contact</p>
-          <p className='text-gray-300 py-4'> Submit the form below or shoot me an email at example@example.com</p>
+        <div className='text-center pb-8'>
+          <p className='text-4xl font-bold inline border-b-4 border-pink-600'>Contact</p>
+          <h3 className='py-4'>Get in Touch</h3>
+          <p className='py-4 px-16 text-center'>
+          Have any questions or want to discuss a project? Feel free to fill out the form below, and I'll get back to you as soon as possible. Alternatively, you can message  me directly at below form. I look forward to connecting with you!</p>
         </div>
-        <label htmlFor='to_email' className='text-gray-300'>Email:</label>
+        
+        <label htmlFor='to_email' >Email:</label>
         <input
           id='to_email'
-          className='bg-[#ccd6f6] p-2 mb-4'
+          className='bg-[#ccd6f6] p-2 mb-4 text-black'
           type="email"
           value={to_email}
           onChange={(e) => setTo(e.target.value)}
           placeholder='Your Email'
           required
         />
-        <label htmlFor='subject' className='text-gray-300'>Subject:</label>
+       
+        <label htmlFor='subject' >Subject:</label>
         <input
           id='subject'
-          className='bg-[#ccd6f6] p-2 mb-4'
+          className='bg-[#ccd6f6] p-2 mb-4 text-black'
           type="text"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
           placeholder='Subject'
           required
         />
-        <label htmlFor='message' className='text-gray-300'>Message:</label>
+        <label htmlFor='message' >Message:</label>
         <textarea
           id='message'
-          className='bg-[#ccd6f6] p-2 mb-4'
+          className='bg-[#ccd6f6] p-2 mb-4 text-black'
           rows="10"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -66,7 +70,7 @@ const EmailForm = () => {
           required
         ></textarea>
         <button
-          className='text-white border-2 border-pink-600 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center'
+          className='border-2 border-pink-600 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center'
           type="submit"
           disabled={loading}
         >
@@ -74,7 +78,7 @@ const EmailForm = () => {
          
         </button>
       </form>
-      {status && <p className='text-gray-300 text-center'>{status}</p>}
+      {status && <p className='text-Black-300 text-center'>{status}</p>}
     </div>
   );
 };

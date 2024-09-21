@@ -62,7 +62,7 @@ const Repositories = () => {
               className="shadow-md shadow-slate-300 bg-[#0a192f] border rounded-lg shadow-md p-4"
             >
               <div className="group-hover:opacity-100 ">
-                <h3 className="text-xl font-bold mb-2">{repo.name}</h3>
+                <h3 className="text-base font-bold mb-2">{repo.name}</h3>
                 <p className="text-gray-600 mb-4">
                   {repo.description || "No description available"}
                 </p>
@@ -83,7 +83,7 @@ const Repositories = () => {
           <button
             onClick={handleViewMore}
             disabled={loading || showViewMore === "End of Repos"}
-            className="text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center"
+            className=" border-2 border-pink-600 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-centerr"
           >
             {loading ? "Loading..." : showViewMore}
           </button>

@@ -1,3 +1,5 @@
+import React , { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './index.css';
 import './Button.css';
@@ -9,18 +11,25 @@ import Skills from './Components/Skill';
 import Work from './Components/Work';
 import Emailjs from './Components/Emailjs';
 import Repositories from './Components/Repositories';
+import Footer from './Components/Footer';
 
 function App() {
+  const [theme, setTheme] = useState('dark');
+
   return (
-    <div className="App">
-      <Navbar/>
-      <Home/>
-      <About/>
-      <Skills/>
-      {/* <Work/> */}
-      <Repositories/>
-      {/* <Contact/> */}
-      <Emailjs/>
+   <div className="App">
+      <Router>
+        <Navbar theme={theme} setTheme={setTheme} />
+        <Home/>
+        <About/>
+        <Skills/>
+        <Repositories/>
+        <Emailjs/>
+        <Routes>
+           <Route path="/resume" element={<Work />} />
+        </Routes>
+        <Footer/>
+      </Router>
     </div>
   );
 }

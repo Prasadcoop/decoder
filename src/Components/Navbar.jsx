@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState, useRef, useEffect  } from 'react';
 import {
   FaBars,
   FaTimes,
@@ -6,23 +6,61 @@ import {
   FaLinkedin,
   FaFacebook,
   FaLinkedinIn,
+  FaMoon,
+  FaSun,
 } from 'react-icons/fa';
 
+import './../Button.css';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 
 
-const Navbar = () => {
+const Navbar = ({ theme, setTheme }) => {
   const [nav, setNav] = useState(false);
+  const navbarRef = useRef(null);
+
   const handleClick = () => setNav(!nav);
- 
+
+  const handleDownload = () => {
+    const a = document.createElement('a');
+    a.href = '/resume/commodline.docx';
+    a.download = 'commodline.docx';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
+  const toggleMode = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  useEffect(() => {
+    // document.body.className = theme;
+    const appElements = document.getElementsByClassName("App");
+    console.log(appElements);
+     for (let i = 0; i < appElements.length; i++) {
+       console.log(appElements[i]);
+       appElements[i].id = theme;
+     }
+     if (navbarRef.current) {
+       navbarRef.current.className = `fixed w-full h-[80px] flex justify-between items-center px-4 navbar ${theme}`;
+     }
+   }, [theme]);
+
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300'>
-      <div className="font-bold text-lg">
-        PSD
-      </div>
+    <nav ref={navbarRef} className={`navbar ${theme}`}>
+    <span className="font-bold text-lg ml-14 ">PSD
+    </span>
 
       {/* menu */}
-      <ul className='hidden md:flex space-x-4'>
+      <motion.ul
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+        className='hidden md:flex space-x-4 listate'
+      >
+        
         <li>
           <Link to='home' smooth={true} duration={500}>
             Home
@@ -43,8 +81,24 @@ const Navbar = () => {
             Work
           </Link>
         </li>
+        <li>
+           <Link onClick={handleDownload} smooth={true} duration={500}>
+           Resume
+           </Link>
+        </li>
+        <li>
+          <span
+              onClick={toggleMode}
+              role="button"
+              className={theme}
+              tabIndex={0}
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? <FaSun size={30} color="black" /> : <FaMoon size={30} color="light" />}
+            </span>
+        </li>
 
-      </ul>
+      </ motion.ul>
 
       {/* Hamburger */}
       <div onClick={handleClick} className='md:hidden z-10'>
@@ -59,35 +113,47 @@ const Navbar = () => {
             : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
         }
       >
-        <li className='py-6 text-4xl'>
+        <li className='text-white py-6 text-4xl'>
           <Link onClick={handleClick} to='home' smooth={true} duration={500}>
             Home
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
+        <li className='text-white py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='about' smooth={true} duration={500}>
             About
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
+        <li className=' text-white py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
             Skills
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
+        <li className='text-white py-6 text-4xl'>
           {' '}
           <Link onClick={handleClick} to='work' smooth={true} duration={500}>
             Work
           </Link>
         </li>
-        <li className='py-6 text-4xl'>
+        <li>
+          <span
+              onClick={toggleMode}
+              role="button"
+              className={theme}
+              tabIndex={0}
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            >
+              {theme === 'light' ? <FaSun size={30} color="black" /> : <FaMoon size={30} color="light" />}
+            </span>
+        </li>
+        <li className='text-white py-6 text-4xl'>
           {' '}
 
         </li>
+       
       </ul>
-
+ 
       {/* Social icons */}
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
         <ul>
@@ -109,10 +175,11 @@ const Navbar = () => {
               Github <FaGithub size={30} />
             </a>
           </li>
+   
 
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
