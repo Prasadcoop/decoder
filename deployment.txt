@@ -27,6 +27,7 @@ Now push your changes to the gh-pages branch:
 
 git push origin gh-pages
 
+npm run build
 
 revert last commit
 git reset --hard HEAD~1
@@ -35,7 +36,7 @@ check all branches
 git branch -a
 
 create branch 
-git branch branch main
+git branch main
 
 Option 3: Revert a Specific Commit (Safest Option)
 If you want to undo the effects of the last commit while preserving it in the history, you can use the git revert command:
