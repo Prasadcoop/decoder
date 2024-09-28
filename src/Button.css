@@ -1,0 +1,62 @@
+#prasad{
+    color : red;
+}
+
+.icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+.icon:hover {
+transform: scale(1.2);
+font-size: 10px;
+color: #FFFF; /* Change this to your desired hover color */
+}
+
+.navbar {
+  background-color: aliceblue;
+  /* background: linear-gradient(45deg,aliceblue, #e5e7e8e0, #bfc7cef2, #e2e3e3, #bbbbbfe8);
+  background-size: 300% 300%;
+ animation: gradientAnimation 15s ease infinite;  */
+  /* background-image: linear-gradient(to right, rgb(227, 227, 227) 0%, #c4c4a1 50%, #a6a6a6 100%); */
+ 
+  /* -moz-transition: all 1s ease-in;
+  -webkit-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+
+  transition: all 1s ease-in;   */
+
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar.dark {
+  background: #0a192f;
+  color:  aliceblue;
+}
+.navbar.light {
+  color:  #0a192f;
+  background: linear-gradient(45deg,rgb(207, 205, 205), #e5e7e8e0, #bfc7cef2, #e2e3e3, #bbbbbfe8);
+  background-size: 300% 300%;
+ animation: gradientAnimation 15s ease infinite; 
+}
+
+#light div{
+  background: linear-gradient(to right, rgb(207, 205, 205) , rgb(230, 230, 230));
+  color:  #0a192f;
+}
+#light div:hover {
+  color:  #6d6a7d;
+}
+
+#dark div{
+  background:  #0a192f;
+  color:  aliceblue;
+}
+
+#dark div:hover {
+  color: #6d6a7d; /* Change text color on hover */
+}
