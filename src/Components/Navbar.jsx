@@ -12,6 +12,7 @@ import {
 
 import './../Button.css';
 import { Link } from 'react-scroll';
+
 import { motion } from 'framer-motion';
 
 
@@ -29,6 +30,15 @@ const Navbar = ({ theme, setTheme }) => {
     a.click();
     document.body.removeChild(a);
   };
+
+  const handleHref =(action) =>{
+    const a = document.createElement('a');
+    a.href = '/education';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+  }
 
   const toggleMode = () => {
     setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
@@ -79,6 +89,16 @@ const Navbar = ({ theme, setTheme }) => {
         <li>
           <Link to='work' smooth={true} duration={500}>
             Work
+          </Link>
+        </li>
+        {/* <li>
+         <Link onClick={() => handleHref("education")}  smooth={true} duration={500}>
+            Education
+          </Link>
+        </li> */}
+          <li>
+          <Link to='education' smooth={true} duration={500}>
+            Education
           </Link>
         </li>
         <li>
