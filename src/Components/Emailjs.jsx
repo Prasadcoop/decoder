@@ -34,8 +34,6 @@ const EmailForm = () => {
         <div className='text-center pb-8'>
           <p className='text-4xl font-bold inline border-b-4 border-pink-600'>Contact</p>
           <h3 className='py-4'>Get in Touch</h3>
-          <p className='py-4 px-16 text-center'>
-          Have any questions or want to discuss a project? Feel free to fill out the form below, and I'll get back to you as soon as possible. Alternatively, you can message  me directly at below form. I look forward to connecting with you!</p>
         </div>
         
         <label htmlFor='to_email' >Email:</label>
