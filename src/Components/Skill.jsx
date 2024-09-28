@@ -12,7 +12,6 @@ import Laravel from "../assets/laravel.png";
 import Python from "../assets/python.png";
 import Django from "../assets/django.png";
 import Boostrap from "../assets/boostrap.png";
-import SQL from "../assets/sql.png";
 import Phpmyadmin from "../assets/phpmyadmin.png";
 import Mongo from "../assets/mongo.png";
 import Express from "../assets/icons8-express-js-100.png";
@@ -79,10 +78,6 @@ const Skills = () => {
             <p className="my-4">FIREBASE</p>
           </div> 
           */}
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-            <img className="w-20 mx-auto" src={SQL} alt="HTML icon" />
-            <p className="my-4">SQL</p>
-          </div> 
            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
             <img className="w-20 mx-auto" src={Phpmyadmin} alt="HTML icon" />
             <p className="my-4">PHPMYADMIN</p>
