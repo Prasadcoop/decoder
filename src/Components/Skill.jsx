@@ -21,7 +21,7 @@ import Graphql from "../assets/graph.png";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full  bg-[#0a192f] text-gray-300">
+    <div name="skills" className="w-full min-h-screen bg-[#0a192f] text-gray-300 pt-20">
       {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div>

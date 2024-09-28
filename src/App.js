@@ -12,6 +12,8 @@ import Work from './Components/Work';
 import Emailjs from './Components/Emailjs';
 import Repositories from './Components/Repositories';
 import Footer from './Components/Footer';
+import Education from './Components/Education';
+
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -22,12 +24,15 @@ function App() {
         <Navbar theme={theme} setTheme={setTheme} />
         <Home/>
         <About/>
+        <Education />
         <Skills/>
         <Repositories/>
         <Emailjs/>
-        <Routes>
+
+        {/* <Routes>
+           <Route path="/education" element={<Education />} />
            <Route path="/resume" element={<Work />} />
-        </Routes>
+        </Routes> */}
         <Footer/>
       </Router>
     </div>
