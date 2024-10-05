@@ -9,22 +9,22 @@ import EducationPng from "../assets/education.png";
 const Education = () => {
   const educationData = [
     {
-      institution: 'University of Example',
-      degree: 'Bachelor of Science in Computer Science',
-      year: '2018 - 2022',
-      description: 'Focused on software development, algorithms, and data structures.',
+      institution: 'Savitribai Phule Pune University',
+      degree: 'Bachelor of Electronics AND Telecommunications',
+      year: '2019 - 2023',
+      description: ' Achieved a CGPA of 8.5. Focused on software development, algorithms, and data structures.',
     },
     {
-      institution: 'Example High School',
-      degree: 'High School Diploma',
-      year: '2014 - 2018',
-      description: 'Graduated with honors, participated in various clubs and sports.',
+      institution: 'University Of Mumbai',
+      degree: 'HSC',
+      year: '2018 - 2019',
+      description: 'Achieved 65% marks while studying with honors and participating in various sports.',
     },
     {
-      institution: 'Example High School',
-      degree: 'High School Diploma',
-      year: '2014 - 2018',
-      description: 'Graduated with honors, participated in various clubs and sports.',
+      institution: 'University Of Mumbai',
+      degree: 'SSC',
+      year: '2016 - 2017',
+      description: 'Achieved 84% percentage',
     },
   
   ];
