@@ -10,7 +10,7 @@ const Education = () => {
   const educationData = [
     {
       institution: 'Savitribai Phule Pune University',
-      degree: 'Bachelor of Electronics AND Telecommunications',
+      degree: 'Bachelor of Electronics & Telecommunications Engineering',
       year: '2019 - 2023',
       description: ' Achieved a CGPA of 8.5. Focused on software development, algorithms, and data structures.',
     },
