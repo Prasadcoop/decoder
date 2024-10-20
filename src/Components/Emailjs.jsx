@@ -14,13 +14,6 @@ const EmailForm = () => {
     setStatus('');
 
     try {
-      // await emailjs.send('service_cxluk7n', 'template_vodjktb', {
-      //   to_email: to_email,
-      //   subject,
-      //   message,
-      // }, 'c0molwQ2DGLjT4MO9');
-      // setStatus('Email sent successfully!');
-      
       await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID, 
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID, 
@@ -31,6 +24,7 @@ const EmailForm = () => {
         }, 
         process.env.REACT_APP_EMAILJS_USER_ID
       );
+      setStatus('Email sent successfully!');
 
     } catch (error) {
       setStatus('Failed to send email. Please try again later.');
