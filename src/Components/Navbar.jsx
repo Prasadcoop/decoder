@@ -59,7 +59,7 @@ const Navbar = ({ theme, setTheme }) => {
 
   return (
     <nav ref={navbarRef} className={`navbar ${theme}`}>
-    <span className="font-bold text-9xl ml-14 ">PSD
+    <span className="font-bold text-3xl ml-14 ">PSD
     </span>
 
       {/* menu */}
